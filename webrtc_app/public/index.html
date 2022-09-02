@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>WebRTC</title>
+  </head>
+
+  <body>
+    <!--everything displayed when opening the page-->
+    <main id="room-selection-container" class="centered">
+      <img src="logo.png" alt="App logo" >
+      <h1>WebRTC video conference</h1>
+      <label>Enter the number of the room you want to connect</label>
+      <input id="room-input" type="text" autocomplete="off"/><br>
+      <label>Enter your name</label>
+      <input id="name-input" type="text" autocomplete="off"/><br>
+      <button id="connect-button">CONNECT</button>
+    </main>
+
+    <!--videos-->
+    <div id="videoCont">
+      <div id="videos" class="videos">
+        <div id="localVideoContainer" class="videoContainer">
+          <video id="localVideo" autoplay muted></video>
+        </div>
+        <!--new remote video gets appended here-->
+      </div>
+    </div>
+
+    <!--everithing not directly connected to the videos (list of partisipants, chat, disconect button) -->
+    <div id="tools">
+
+      <!--chat-->
+      <div id="chatCont">
+
+        <!--button to display list of participants-->
+        <button id="listButton" class="classButton" type="button">Participant list</button>
+
+        <div class="content">
+          <div class="messages">
+            <!--new message gets appended here -->
+          </div>
+
+          <!--UI for sending message-->
+          <form class="footer" onsubmit="return false;">
+            <div id="toSend">
+              <input id="chatInput" type="text" autocomplete="off" placeholder="Your message...">
+              <input id="myFile" type="file" name="filename">
+              <button id="sendButton" type="submit">Send</button>
+            </div>
+          </form>
+        </div>
+      
+        <!--chat message template-->
+        <template data-template="message">
+          <div class="message">
+            <div class="messageName"></div>
+            <div id = "messageBubble" class="messageBubbleClass">
+              <!--if a file is send then the download link to the file goes here-->
+            </div>
+          </div>
+        </template>
+
+      </div>
+
+      <!--participant list-->
+      <div id="participantListCont">
+
+        <!--button to display chat-->
+        <button id="chatButton" class="classButton" type="button">Chat</button>
+
+        <div class="list">
+          <div class="participants">
+            <!--name of new participant gets appended here -->
+          </div>
+        </div>
+
+        <!--individual participant template-->
+        <template data-template="participant">
+          <div class="participant">
+            <div class="participantName"></div>
+          </div>
+        </template>
+      </div>
+
+      <!--button from disconecting from the call-->
+      <button id="disconnectButton" type="button">Disconnect</button>
+
+    </div>
+
+    <!--scripts-->
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="client.js"></script>
+  </body>
+</html>
