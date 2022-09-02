@@ -14,7 +14,7 @@ The application we developed is intended to conduct teleconferences theoreticall
 ### Connection
 1. Typing in the browser the URL http://ip_of_server:3000 on a local network.
 2. Filling in the room number. If there is already a room with the specific number, then the user will connect to it, otherwise a new room with the specific number will be created.
-3. Filling the user's name.
+3. Filling the user's name. 
 4. Pressing the connect button.
 ### Send message
 1. Write a message in the "Your message.." box.
