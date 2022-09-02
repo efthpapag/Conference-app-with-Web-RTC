@@ -7,7 +7,7 @@ The application we developed is intended to conduct teleconferences theoreticall
 3. Appropriate configuration of the users browser to allow the website to use the camera and microphone http://ip_of_server:3000. e.g. in Chrome https://medium.com/@Carmichaelize/enabling-the-microphone-camera-in-chrome-for-local-unsecure-origins-9c90c3149339
 4. Installing express and socket.io by running npm install, npm install express --save, npm install socket.io --save
 
-# Instructions for use
+# Instructions for use 
 ## Server
 1. Start the server by navigating to the webrtc_app directory and executing the node server.js command.
 ## Client
